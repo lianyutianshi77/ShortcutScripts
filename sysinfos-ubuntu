@@ -11,7 +11,9 @@ echo "======================================================="
 IPS=`/sbin/ifconfig |grep -B 1 'inet '|awk '{print $1,$2}'|grep -E -A 1 "ens|eth|em"`
 P OTHER NO "内网IP地址: \n${IPS}"
 wip=`timeout 3 curl -s ipinfo.io/ip`
-P OTHER NO "外网IP地址: $wip"
+P OTHER NO "外网IP地址:"
+P OTHER NO "wan link"
+P OTHER NO "inet addr: ${wip}"
 echo "======================================================="
 echo ""
 
